@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "name": "Hydrating Moisturizer",
+    "price": "799",
+    "desc": "For dry skin – nourishes all day.",
+    "usage": "Dry skin",
+    "seller": "GlowShop",
+    "image": "moisturizer.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Ultra-Light Sunscreen",
+    "price": "549",
+    "desc": "SPF 50, suits all skin tones.",
+    "usage": "All skin tones",
+    "seller": "GlowShop",
+    "image": "sunscreen.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Vitamin C Serum",
+    "price": "999",
+    "desc": "Brightens dull skin.",
+    "usage": "Dull skin",
+    "seller": "GlowShop",
+    "image": "serum.jpg"
+  }
+]

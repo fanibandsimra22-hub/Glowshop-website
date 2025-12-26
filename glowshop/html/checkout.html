@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GlowShop | Checkout</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>GlowShop</h1>
+    <nav>
+     <a href="login.html">Login</a>
+      <a href="index.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="add-product.html">Sell Product</a>
+      <a href="user-profile.html">Profile</a>
+      <a href="orders.html">Orders</a>
+    </nav>
+  </header>
+  <main>
+    <section class="checkout-section" style="max-width:450px;margin:2em auto;padding:2em 2em;background:#fcf3ff;border-radius:14px;box-shadow:0 2px 22px #e4d4f8;">
+      <h2>Checkout</h2>
+      <form id="checkoutForm" autocomplete="off">
+        <label><b>Shipping Address:</b></label>
+        <textarea name="address" required style="width:100%;border-radius:7px;margin-bottom:1em;"></textarea>
+
+        <label><b>Payment Method:</b></label>
+        <select name="payment" id="paymentSelect" required style="width:100%;border-radius:7px;">
+          <option value="">Choose payment option</option>
+          <option value="Credit Card">Credit Card</option>
+          <option value="UPI">UPI</option>
+          <option value="COD">Cash on Delivery</option>
+        </select>
+
+        <!-- Credit Card Section -->
+        <div id="cardDetails" style="display: none; margin-top:1em;">
+          <input type="text" name="cardName" placeholder="Name on Card" style="width:100%; margin-bottom:8px;" />
+          <input type="text" name="cardNumber" placeholder="Card Number" maxlength="16" style="width:100%; margin-bottom:8px;" />
+          <input type="text" name="cardExpiry" placeholder="Expiry (MM/YY)" style="width:100%; margin-bottom:8px;" />
+          <input type="text" name="cardCVV" placeholder="CVV" maxlength="4" style="width:100%;" />
+        </div>
+
+        <!-- UPI Section -->
+        <div id="upiDetails" style="display: none; margin-top:1em;">
+          <input type="text" name="upiId" placeholder="UPI ID (e.g. name@bank)" style="width:100%;" />
+        </div>
+
+        <button type="submit" class="place-order-btn" style="margin-top:1.4em;">Place Order</button>
+      </form>
+      <div id="checkoutMessage" style="margin-top:1.4em;color:#8b59c2;font-weight:bold;"></div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 GlowShop | All Rights Reserved</p>
+  </footer>
+  <script src="../js/checkout.js"></script>
+</body>
+</html>

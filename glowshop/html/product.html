@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GlowShop | Products</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>GlowShop</h1>
+    <nav>
+      <a href="login.html">Login</a>
+      <a href="index.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="add-product.html">Sell Product</a>
+      <a href="user-profile.html">Profile</a>
+      <a href="orders.html">Orders</a>
+    </nav>
+  </header>
+  <main>
+  <section class="products-list" style="margin-top:2.7em;">
+    <h2>All Products</h2>
+    <!-- Only one main product grid div -->
+    <div class="product-grid" id="productListing">
+      <!-- Products will appear here by JS -->
+    </div>
+  </section>
+  <!-- AJAX Product Suggestion Feature -->
+<button id="suggestBtn">Suggest Me a Product</button>
+<p id="suggestResult"></p>
+
+</main>
+
+  <footer>
+    <p>&copy; 2025 GlowShop | All Rights Reserved</p>
+  </footer>
+  <!-- Product rendering & Add to Cart JS -->
+  <script src="../js/product.js"></script>
+
+</body>
+</html>

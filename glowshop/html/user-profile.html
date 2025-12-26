@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GlowShop | User Profile</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>GlowShop</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="add-product.html">Sell Product</a>
+      <a href="user-profile.html">Profile</a>
+      <a href="orders.html">Orders</a>
+    </nav>
+  </header>
+  <main>
+    <section class="profile-section">
+      <h2>Your Account</h2>
+      <div class="profile-card">
+        <img src="../assets/user-avatar.png" alt="User Avatar" class="profile-avatar">
+        <div class="profile-details">
+          <p><b>Name:</b> <span id="profile-username">Loading...</span></p>
+          <p><b>Email:</b> <span id="profile-email">Loading...</span></p>
+          <button id="editProfileBtn">Edit Profile</button>
+          <button id="logoutBtn" style="margin-top:10px">Logout</button>
+
+        </div>
+      </div>
+      <!-- Edit Profile Modal -->
+      <div id="profileModal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <span id="closeProfileModal" class="close">&times;</span>
+          <h3>Edit Profile</h3>
+          <form id="profileForm">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <label for="password">New Password:</label>
+            <input type="password" name="password" id="password" placeholder="New Password">
+            <label for="avatarUpload">Change Profile Picture:</label>
+            <input type="file" id="avatarUpload" name="avatar">
+            <button type="submit">Save Changes</button>
+          </form>
+        </div>
+      </div>
+      <h3>Saved Addresses</h3>
+      <div class="addresses-list" id="addressesList">
+  <!-- Address cards will appear here by JavaScript -->
+      </div>
+      <button id="addAddressBtn">Add New Address</button>
+      
+      <!-- Address Modal (for editing/adding) -->
+      <div id="addressModal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <span id="closeModal" class="close">&times;</span>
+          <h3>Edit Address</h3>
+          <form id="addressForm">
+            <label for="modalFullName">Full Name:</label>
+            <input type="text" id="modalFullName" name="fullName" required>
+            <label for="modalPhone">Phone Number:</label>
+            <input type="text" id="modalPhone" name="phone" required>
+            <label for="modalPincode">Pin Code:</label>
+            <input type="text" id="modalPincode" name="pincode" required>
+            <label for="modalStreet">Street Address:</label>
+            <input type="text" id="modalStreet" name="street" required>
+            <label for="modalCity">City:</label>
+            <input type="text" id="modalCity" name="city" required>
+            <label for="modalState">State:</label>
+            <input type="text" id="modalState" name="state" required>
+            <button type="submit">Save Address</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 GlowShop | All Rights Reserved</p>
+  </footer>
+
+  <!-- Simple script to load profile info from sessionStorage -->
+  <script>
+    // Retrieve logged-in user (if any)
+    const userData = sessionStorage.getItem('glowshop_user');
+    if (userData) {
+      const user = JSON.parse(userData);
+      document.getElementById('profile-username').textContent = user.username;
+      document.getElementById('profile-email').textContent = user.email;
+      // Also update the default address Full Name
+      document.getElementById('address-username').textContent = user.username;
+    } else {
+      document.getElementById('profile-username').textContent = 'Guest';
+      document.getElementById('profile-email').textContent = 'Please login.';
+      document.getElementById('address-username').textContent = 'Guest';
+      // Optionally, redirect to login:
+      // window.location.href = 'login.html';
+      // Or disable profile editing:
+      document.getElementById('editProfileBtn').disabled = true;
+    }
+  </script>
+  <script src="../js/user-profile.js"></script>
+  <script>
+  document.getElementById('logoutBtn').onclick = function() {
+    sessionStorage.removeItem('glowshop_user');
+    window.location.href = 'login.html';
+  };
+</script>
+
+</body>
+</html>

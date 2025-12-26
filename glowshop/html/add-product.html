@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GlowShop | Add Product</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <h1>GlowShop</h1>
+    <nav>
+      <a href="login.html">Login</a>
+      <a href="index.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="add-product.html">Sell Product</a>
+      <a href="user-profile.html">Profile</a>
+      <a href="orders.html">Orders</a>
+    </nav>
+  </header>
+  <main>
+    <section class="add-product-section">
+      <h2>Add a New Product</h2>
+      <form class="add-product-form" id="addProductForm" autocomplete="off">
+        <input type="text" name="productName" placeholder="Product Name" required>
+        <textarea name="description" placeholder="Product Description" required></textarea>
+        <input type="number" name="price" placeholder="Price (in ₹)" min="0" required>
+        <input type="text" name="usage" placeholder="For what skin type/tone / Usage" required>
+        <input type="text" name="seller" placeholder="Seller Name" required>
+        <input type="text" name="image" placeholder="Image File Name (e.g. moisturizer.jpg)" required>
+        <button type="submit">Add Product</button>
+      </form>
+      <div id="formMessage" style="margin-top:1em;font-weight:600;color:#8b59c2;"></div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 GlowShop | All Rights Reserved</p>
+  </footer>
+  <script src="../js/add-product.js"></script>
+</body>
+</html>
